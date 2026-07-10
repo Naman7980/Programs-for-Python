@@ -1,20 +1,16 @@
-# Source - https://stackoverflow.com/a/61388230
-# Posted by Charlie
-# Retrieved 2026-07-03, License - CC BY-SA 4.0
-
 import win32com.client as wincl
 import time
 
 speaker_number = 1
-message = '''hey, i am naman
-and this is my first program who can speak multiple lines 
-i am feeling very great'''
+message = '''hey, naman it is the time to drink water take a break and drink 1 glass of water
+'''
 spk = wincl.Dispatch("SAPI.SpVoice")
 vcs = spk.GetVoices()
 SVSFlag = 11
 print(vcs.Item (speaker_number) .GetAttribute ("Name")) # speaker name
 spk.Voice
 spk.SetVoice(vcs.Item(speaker_number)) # set voice (see Windows Text-to-Speech settings)
-spk.Speak(message)
-# import shutil
-# shutil.copytree("data", "data2")
+
+for i in range(24):
+    spk.Speak(message)
+    time.sleep(3600)

@@ -1,0 +1,21 @@
+import time
+import asyncio
+
+async def func1():
+    time.sleep(3)
+    print("func 1")
+    
+async def func2():
+    time.sleep(3)
+    print("func 2")    
+    
+async def func3():
+    time.sleep(3)
+    print("func 3")
+    
+async def main():
+    await func1()
+    await func2()
+    await func3()       
+    
+asyncio.run(main())    
